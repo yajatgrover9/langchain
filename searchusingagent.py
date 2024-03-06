@@ -4,6 +4,7 @@ from langchain.agents import initialize_agent, Tool, AgentType
 from tools.tools import geturl
 
 def lookup(name:str)-> str:
+
     llm=ChatOpenAI(temperature=0,model_name="gpt-3.5-turbo")
     template= "For the given name - {name}, I want you to give me the link to their LinkedIn profile page,"\
               "your answer should only contain a URL"

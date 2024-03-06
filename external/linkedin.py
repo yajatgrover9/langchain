@@ -1,10 +1,12 @@
 #YAJAT
 import os
+import requests
+
 def linkedin(linkedin_profile_url:str):
     api_endpoint = "https://nubela.co/proxycurl/api/v2/linkedin"
     headers = {'Authorization': 'Bearer ' + os.environ.get("PROXYCURL_API_KEY")}
 
-    response=requests.get(api_endpoint,params={"url":linkedin_profile_url},headers=headers)
+    response= requests.get(api_endpoint,params={"url":linkedin_profile_url},headers=headers)
     data=response.json()
     data = {
         x: y
