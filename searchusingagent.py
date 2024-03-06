@@ -13,8 +13,12 @@ def lookup(name:str)-> str:
         Tool(name='Crawl Google 4 linkedin profile page',
              func=geturl,
              description="use for getting linkedin URL")]
+
     agent=initialize_agent(tools=agent_tool,llm=llm,agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
+
     prompt_template=PromptTemplate(template=template, input_variables=['name'])
+
     linkedin= agent.run(prompt_template.format_prompt(name=name))
+
     return linkedin
 
