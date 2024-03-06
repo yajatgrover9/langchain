@@ -1,6 +1,5 @@
 #YAJAT
 import os
-import requests
 def linkedin(linkedin_profile_url:str):
     api_endpoint = "https://nubela.co/proxycurl/api/v2/linkedin"
     headers = {'Authorization': 'Bearer ' + os.environ.get("PROXYCURL_API_KEY")}
